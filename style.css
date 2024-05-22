@@ -25,21 +25,22 @@ body {
     color: #f4f4f4;
     padding: 20px;
 }
-header{
+
+header {
     position: fixed;
     top: 0px;
     height: 70px;
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-header h1{
-    height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: to improve visibility */
+}
+
+header h1 {
     color: black;
 }
+
 .container {
     background-color: var(--new-task-background);
     border-radius: 10px;
@@ -59,10 +60,12 @@ header h1{
     font-size: 24px;
     letter-spacing: 2px;
 }
-main h2{
+
+main h2 {
     text-align: center;
     padding: 10px;
 }
+
 .input-group {
     display: flex;
     justify-content: space-between;
@@ -135,6 +138,17 @@ input[type='radio'] {
     margin-bottom: 10px;
     background-color: var(--task-background);
 }
+#number{
+    background-color: var(--delete-button);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+}
 
 .task-text {
     flex: 1;
@@ -172,13 +186,18 @@ input[type='radio'] {
     background-color: var(--delete-button-hover);
 }
 
-/* Responsive Styles */
+
 @media screen and (max-width: 500px) {
     body {
         height: auto;
-        padding: 20px;
+        padding: 10px;
+        background-image: url(./images/2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
-
+    header h1{
+        font-size: x-large;
+    }
     .container {
         width: 100%;
         max-width: none;
@@ -186,17 +205,19 @@ input[type='radio'] {
     }
 
     .input-group {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 5px;
+        align-items: center;
     }
-
+    
     #new-task {
         width: 100%;
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
     }
 
     #add-task-btn {
-        width: 100%;
         margin: 0;
+
     }
 }
+
